@@ -301,6 +301,7 @@ code {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   margin-left: 340px;
+  vertical-align: middle;
 }
 
 .recent-orders-button-first {
@@ -379,9 +380,11 @@ code {
 
 .recent-orders-order-time-container {
   margin-left: 10px;
-  width: 80px;
+  width: 125px;
   color: $recent-orders-order-text-color;
   overflow-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   text {
     white-space: nowrap;
@@ -398,7 +401,7 @@ code {
   width: 280px;
   overflow-wrap: break-word;
   color: $recent-orders-order-text-color;
-  margin-left: 65px;
+  margin-left: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
 
