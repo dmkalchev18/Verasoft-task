@@ -1,6 +1,6 @@
 import axios from "axios";
 import { all, call, put, takeLatest } from 'redux-saga/effects';
-import { IOrders } from '../types';
+import { IOrders, IOrderEdittor } from '../types';
 import { fetchOrderSuccess } from '../actions';
 import { reduxActionTypes } from '../actionTypes';
 
@@ -11,10 +11,24 @@ const getOrder = () => {
 
 function* fetchOrderSaga() {
     try {
-        const response: IOrders = yield call(getOrder);
+        const response:[] = yield call(getOrder);
+
+        let i:number=0;
+        let modifiedOrders:IOrders = []
+        for(let orders in response){
+            let order:IOrderEdittor={
+                id:i,
+                key: '',
+                sent:[]
+            }
+            order.key=orders;
+            order.sent=response[orders]['sent'];
+            modifiedOrders.push(order);
+            i++;
+        }
         yield put(
             fetchOrderSuccess({
-                orders: response
+                orders: modifiedOrders
             })
         );
     } catch (e) {

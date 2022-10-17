@@ -105,13 +105,14 @@ export interface IOrder {
     type:string;
 }
 
-export interface IOrders {
-    'orders_A' : {sent: IOrder[]},
-    'orders_AA' :{sent: IOrder[]},
-    'orders_AAA' : {sent: IOrder[]},
-    'orders_B' : {sent: IOrder[]},
-    'orders_C' : {sent: IOrder[]},
+export interface IOrderEdittor{
+    id:number,
+    key:string,
+    sent:IOrder[]
+
 }
+
+export type IOrders = IOrderEdittor[]
 
 export interface UserState {
     pending: boolean;

@@ -63,11 +63,11 @@ const Orders = () => {
       orderButtons.map((OrderButton) => {
         if (OrderButton.isHighlighted === true) {
           switch (OrderButton.id) {
-            case 1: {setOrderData(orders.orders_A.sent); break;}
-            case 2: {setOrderData(orders.orders_AA.sent); break;}
-            case 3: {setOrderData(orders.orders_AAA.sent); break;}
-            case 4: {setOrderData(orders.orders_B.sent); break;}
-            case 5: {setOrderData(orders.orders_C.sent); break;}
+            case 1: {setOrderData(orders.at(0)?.sent); break;}
+            case 2: {setOrderData(orders.at(1)?.sent); break;}
+            case 3: {setOrderData(orders.at(2)?.sent); break;}
+            case 4: {setOrderData(orders.at(3)?.sent); break;}
+            case 5: {setOrderData(orders.at(4)?.sent); break;}
           }
         }
       })
